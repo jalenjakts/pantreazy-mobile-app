@@ -2,6 +2,8 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import 'react-native-gesture-handler';
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFonts } from "@use-expo/font";
 import ScanScreen from "./src/screens/TestScreens/ScanScreen";
@@ -18,6 +20,7 @@ import { navigationRef } from "./src/RootNavigation";
 
 const AuthStack = createNativeStackNavigator();
 const MainTab = createBottomTabNavigator();
+const MainDrawer = createDrawerNavigator();
 const ScanStack = createNativeStackNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +36,16 @@ const MainFlow = () => {
       <MainTab.Screen name="Profile" component={ProfileScreen} />
     </MainTab.Navigator>
   );
+};
+
+const MainDrawerFlow = () => {
+  return (
+    <MainDrawer.Navigator useLegacyImplementation={true} initialRouteName="Home">
+      <MainDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Barcode" component={ScanScreen} />
+      <MainDrawer.Screen name="Profile" component={ProfileScreen} />
+    </MainDrawer.Navigator>
+  )
 };
 
 const AuthFlow = () => {
@@ -74,7 +87,7 @@ export default function App() {
             />
             <Stack.Screen
               name="MainFlow"
-              component={MainFlow}
+              component={MainDrawerFlow}
               options={{ headerShown: false }}
             />
             <Stack.Screen

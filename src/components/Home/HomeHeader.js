@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
-
+import { useNavigation } from "@react-navigation/native";
 function HomeHeader(props) {
+  const navigation = useNavigation();
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to ProfileScreen")}
+          onPress={() => navigation.openDrawer()}
           style={styles.profileBtn}
         >
           <MaterialCommunityIconsIcon
@@ -24,7 +25,7 @@ function HomeHeader(props) {
       <View style={styles.leftIconButtonRowFiller}></View>
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to RecipeScreen")}
+          onPress={() => navigation.navigate("Navigate to RecipeScreen")}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon

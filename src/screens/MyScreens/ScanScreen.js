@@ -31,10 +31,9 @@ const ScanScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.scanStyle}> Scan Screen </Text>
             <BarCodeScanner
                 onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                style={StyleSheet.absoluteFillObject}
+                style={[StyleSheet.absoluteFillObject]}
             />
             {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
         </View>
@@ -42,13 +41,16 @@ const ScanScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    scanStyle: {
-        marginTop: 50
+    barcode: {
+        borderWidth: 10,
+        borderColor: 'red',
+        height: 100,
+        width: 200,
     },
     container: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     }
 });
 

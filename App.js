@@ -17,7 +17,7 @@ import ResolveAuthScreen from "./src/screens/resolveAuthScreen";
 // Home Drawer Route Screens
 import HomeScreen from "./src/screens/MyScreens/HomeScreen"
 import ProfileScreen from "./src/screens/MyScreens/ProfileScreen";
-import ScanScreen from "./src/screens/TestScreens/ScanScreen";
+import ScanScreen from "./src/screens/MyScreens/ScanScreen";
 import ScannedScreen from "./src/screens/MyScreens/ScannedScreen";
 import FavScreen from "./src/screens/MyScreens/FavScreen";
 import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
@@ -57,7 +57,7 @@ const MainDrawerFlow = () => {
       <MainDrawer.Screen name="Search" component={SearchRecipeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Recipes" component={RecipeScreen} options={{ headerShown: false }} />
-      <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false, }} />
     </MainDrawer.Navigator>
   )
 };

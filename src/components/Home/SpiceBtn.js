@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -9,9 +10,10 @@ import {
 } from "react-native";
 import SpiceItems from "./SpiceItems";
 
-function SpiceBtn(props) {
+const SpiceBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('PantryFlow', { Screen: 'Spices' })}>
       <View style={styles.imageStack}>
         <ImageBackground
           //source={require("../assets/images/1318101361_(2).jpg")}
@@ -19,12 +21,11 @@ function SpiceBtn(props) {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <SpiceItems style={styles.spiceItems}></SpiceItems>
+          <SpiceItems style={styles.spiceItems} />
         </ImageBackground>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to SpiceScreen")}
           style={styles.button}
-        ></TouchableOpacity>
+        />
       </View>
       <Text style={styles.spices}>Spices</Text>
     </TouchableOpacity>

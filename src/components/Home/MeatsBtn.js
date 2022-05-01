@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -8,13 +8,15 @@ import {
   Text
 } from "react-native";
 import MeatItems from "./MeatItems";
+import { useNavigation } from "@react-navigation/native";
 
 function MeatsBtn(props) {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('PantryFlow', { Screen: 'Meats' })}>
       <View style={styles.imageStack}>
         <ImageBackground
-          //source={require("../assets/images/homepage_hero_image_2.webp")}
+          // source={require("../assets/images/homepage_hero_image_2.webp")}
           resizeMode="cover"
           style={styles.image}
           imageStyle={styles.image_imageStyle}
@@ -22,7 +24,6 @@ function MeatsBtn(props) {
           <MeatItems style={styles.items}></MeatItems>
         </ImageBackground>
         <TouchableOpacity /* Conditional navigation not supported at the moment */
-          onPress={() => console.log("Navigate to MeatScreen")}
           style={styles.button}
         ></TouchableOpacity>
       </View>

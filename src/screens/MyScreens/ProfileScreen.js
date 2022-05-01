@@ -7,7 +7,7 @@ import ProfileEmail from "../../components/Profile/ProfileEmail";
 import HelpBtn from "../../components/Profile/HelpBtn";
 import SignOutBtn from "../../components/Profile/SignOutBtn";
 
-function ProfileScreen(props) {
+const ProfileScreen = (props) => {
   return (
     <View style={styles.container}>
       <ProfileHeader style={styles.materialHeader41}></ProfileHeader>

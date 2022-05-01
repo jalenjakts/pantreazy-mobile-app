@@ -8,7 +8,7 @@ import Ingredients from "../../components/Recipe/Ingredients";
 import RecCookStepsText from "../../components/Recipe/RecCookStepsText";
 import CookSteps from "../../components/Recipe/CookSteps";
 
-function RecipeScreen(props) {
+const RecipeScreen = (props) => {
   return (
     <View style={styles.container}>
       <RecipeHeader style={styles.materialHeader31}></RecipeHeader>

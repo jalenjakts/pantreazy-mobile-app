@@ -6,10 +6,11 @@ import 'react-native-gesture-handler';
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFonts } from "@use-expo/font";
-// import ScanScreen from "./src/screens/TestScreens/ScanScreen";
+import ScanScreen from "./src/screens/TestScreens/ScanScreen";
 import ScanDetailScreen from "./src/screens/TestScreens/ScanDetailScreen";
-import ScanScreen from "./src/screens/MyScreens/ScanScreen";
+// import ScanScreen from "./src/screens/MyScreens/ScanScreen";
 import LoginScreen from "./src/screens/MyScreens/LoginScreen";
+import ScannedScreen from "./src/screens/MyScreens/ScannedScreen";
 import SignupScreen from "./src/screens/MyScreens/SignupScreen";
 import ProfileScreen from "./src/screens/MyScreens/ProfileScreen";
 import HomeScreen from "./src/screens/MyScreens/HomeScreen"
@@ -17,6 +18,7 @@ import ForgotPassScreen from "./src/screens/MyScreens/ForgotPassScreen";
 import ResolveAuthScreen from "./src/screens/resolveAuthScreen";
 import FavScreen from "./src/screens/MyScreens/FavScreen";
 import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
+import RecipeScreen from "./src/screens/MyScreens/RecipeScreen";
 import { Provider as AuthProvider } from "./src/context/authContext";
 import { Provider as MainProvider } from "./src/context/mainContext";
 import { navigationRef } from "./src/RootNavigation";
@@ -43,12 +45,19 @@ const MainFlow = () => {
 
 const MainDrawerFlow = () => {
   return (
-    <MainDrawer.Navigator useLegacyImplementation={true} initialRouteName="Home">
+    <MainDrawer.Navigator
+      useLegacyImplementation={true} i
+      nitialRouteName="Home"
+      screenOptions={{
+        drawerActiveBackgroundColor: "rgba(228,243,212,1)",
+        drawerActiveTintColor: "rgba(0,159,37,1)"
+      }}>
       <MainDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Barcode" component={ScanScreen} />
-      <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
-      <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Search" component={SearchRecipeScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Recipes" component={RecipeScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
     </MainDrawer.Navigator>
   )
 };
@@ -97,7 +106,7 @@ export default function App() {
             />
             <Stack.Screen
               name="ScanDetail"
-              component={ScanDetailScreen}
+              component={ScannedScreen}
             />
           </Stack.Navigator>
         </MainProvider>

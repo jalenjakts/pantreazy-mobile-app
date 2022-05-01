@@ -25,7 +25,7 @@ function HomeHeader(props) {
       <View style={styles.leftIconButtonRowFiller}></View>
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Navigate to RecipeScreen")}
+          onPress={() => navigation.navigate("Search")}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -34,7 +34,7 @@ function HomeHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to FavScreen")}
+          onPress={() => navigation.navigate("Favorites")}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -43,7 +43,7 @@ function HomeHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to Scanner")}
+          onPress={() => navigation.navigate('Barcode')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon

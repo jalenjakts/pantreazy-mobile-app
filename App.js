@@ -6,14 +6,17 @@ import 'react-native-gesture-handler';
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFonts } from "@use-expo/font";
-import ScanScreen from "./src/screens/TestScreens/ScanScreen";
+// import ScanScreen from "./src/screens/TestScreens/ScanScreen";
+import ScanDetailScreen from "./src/screens/TestScreens/ScanDetailScreen";
+import ScanScreen from "./src/screens/MyScreens/ScanScreen";
 import LoginScreen from "./src/screens/MyScreens/LoginScreen";
 import SignupScreen from "./src/screens/MyScreens/SignupScreen";
 import ProfileScreen from "./src/screens/MyScreens/ProfileScreen";
 import HomeScreen from "./src/screens/MyScreens/HomeScreen"
 import ForgotPassScreen from "./src/screens/MyScreens/ForgotPassScreen";
-import ScanDetailScreen from "./src/screens/TestScreens/ScanDetailScreen";
 import ResolveAuthScreen from "./src/screens/resolveAuthScreen";
+import FavScreen from "./src/screens/MyScreens/FavScreen";
+import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
 import { Provider as AuthProvider } from "./src/context/authContext";
 import { Provider as MainProvider } from "./src/context/mainContext";
 import { navigationRef } from "./src/RootNavigation";
@@ -43,7 +46,9 @@ const MainDrawerFlow = () => {
     <MainDrawer.Navigator useLegacyImplementation={true} initialRouteName="Home">
       <MainDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Barcode" component={ScanScreen} />
-      <MainDrawer.Screen name="Profile" component={ProfileScreen} />
+      <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Search" component={SearchRecipeScreen} options={{ headerShown: false }} />
     </MainDrawer.Navigator>
   )
 };
@@ -52,13 +57,13 @@ const AuthFlow = () => {
   return (
     <AuthStack.Navigator>
       <AuthStack.Screen
-        name="Signup"
-        component={SignupScreen}
+        name="Login"
+        component={LoginScreen}
         options={{ headerShown: false }}
       />
       <AuthStack.Screen
-        name="Login"
-        component={LoginScreen}
+        name="Signup"
+        component={SignupScreen}
         options={{ headerShown: false }}
       />
       <AuthStack.Screen name="Forgot" component={ForgotPassScreen} />

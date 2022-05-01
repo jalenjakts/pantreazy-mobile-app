@@ -20,7 +20,7 @@ const RecipeHeader = (props) => {
         </TouchableOpacity>
         <View style={styles.textWrapper}>
           <Text numberOfLines={1} style={styles.recipe}>
-            Recipe
+            Recipes
           </Text>
         </View>
       </View>

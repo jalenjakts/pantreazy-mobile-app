@@ -19,7 +19,7 @@ const SearchRecipeHeader = (props) => {
         </TouchableOpacity>
         <View style={styles.textWrapper}>
           <Text numberOfLines={1} style={styles.recipes}>
-            Recipes
+            Search Recipes
           </Text>
         </View>
       </View>

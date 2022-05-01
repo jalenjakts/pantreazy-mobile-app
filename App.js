@@ -46,12 +46,31 @@ const PantryStack = createNativeStackNavigator();
 const MainDrawerFlow = () => {
   return (
     <MainDrawer.Navigator
-      useLegacyImplementation={true} i
+      useLegacyImplementation={true}
       nitialRouteName="Home"
-      screenOptions={{
+      screenOptions={({ route }) => ({
+        drawerIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === "Home") {
+            iconName = focused ? "home" : "home-outline";
+          } else if (route.name === "Barcode") {
+            iconName = focused ? "barcode" : "barcode-outline";
+          } else if (route.name === "Search") {
+            iconName = focused ? "search" : "search-outline";
+          } else if (route.name === "Favorites") {
+            iconName = focused ? "heart" : "heart-outline";
+          } else if (route.name === "Recipes") {
+            iconName = focused ? "fast-food" : "fast-food-outline";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "settings" : "settings-outline";
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        drawerActiveTintColor: "rgba(0,159,37,1)",
         drawerActiveBackgroundColor: "rgba(228,243,212,1)",
-        drawerActiveTintColor: "rgba(0,159,37,1)"
-      }}>
+      })}>
       <MainDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Barcode" component={ScanScreen} />
       <MainDrawer.Screen name="Search" component={SearchRecipeScreen} options={{ headerShown: false }} />

@@ -58,6 +58,7 @@ const MainDrawerFlow = () => {
       <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Recipes" component={RecipeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="PostScan" component={ScannedScreen} options={{ headerShown: false }} />
     </MainDrawer.Navigator>
   )
 };

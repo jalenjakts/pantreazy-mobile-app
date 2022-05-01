@@ -14,10 +14,6 @@ import { Context as FoodContext } from "../../context/mainContext";
 const HomeScreen = ({ navigation }) => {
   const { get_pantry } = useContext(FoodContext);
 
-  useEffect(() => {
-    get_pantry();
-  }, [])
-
   return (
     <ScrollView style={styles.container}>
       <HomeHeader style={styles.materialHeader3} />

@@ -9,13 +9,13 @@ const ScannerHeader = (props) => {
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity /* Conditional navigation not supported at the moment */
-          onPress={() => navigation.navigate('Barcode')}
+          onPress={() => navigation.goBack()}
           style={styles.leftIconButton}
         >
           <MaterialCommunityIconsIcon
             name="backspace"
             style={styles.leftIcon}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
         <View style={styles.textWrapper}>
           <Text numberOfLines={1} style={styles.scanner}>

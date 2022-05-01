@@ -18,6 +18,7 @@ import ResolveAuthScreen from "./src/screens/resolveAuthScreen";
 import HomeScreen from "./src/screens/MyScreens/HomeScreen"
 import ProfileScreen from "./src/screens/MyScreens/ProfileScreen";
 import ScanScreen from "./src/screens/MyScreens/ScanScreen";
+import Scanner from "./src/screens/MyScreens/Scanner";
 import ScannedScreen from "./src/screens/MyScreens/ScannedScreen";
 import FavScreen from "./src/screens/MyScreens/FavScreen";
 import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
@@ -64,6 +65,8 @@ const MainDrawerFlow = () => {
             iconName = focused ? "fast-food" : "fast-food-outline";
           } else if (route.name === "Profile") {
             iconName = focused ? "settings" : "settings-outline";
+          } else {
+            iconName = focused ? "alert" : "alert-outline";
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -72,7 +75,7 @@ const MainDrawerFlow = () => {
         drawerActiveBackgroundColor: "rgba(228,243,212,1)",
       })}>
       <MainDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      <MainDrawer.Screen name="Barcode" component={ScanScreen} />
+      <MainDrawer.Screen name="Barcode" component={Scanner} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Search" component={SearchRecipeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Recipes" component={RecipeScreen} options={{ headerShown: false }} />

@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 function ProfileEmail(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <Text style={styles.testEmail}>Test Email</Text>
+      <Text style={styles.testEmail}>{props.profileEmail}</Text>
     </View>
   );
 }

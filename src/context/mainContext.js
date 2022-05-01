@@ -12,6 +12,8 @@ const mainReducer = (state, action) => {
             return { ...state }
         case "get_pantry":
             return { ...state, response: action.payload }
+        case "get_user":
+            return { ...state, response: action.payload }
         default:
             return state;
     }
@@ -30,23 +32,40 @@ const scan_barcode = (dispatch) => async ({ data }) => {
 
 // Saves the item that is scanned by the user into the pantry
 const save_pantry_item = (dispatch) => async ({ barcode, quantity }) => {
+    const token = await AsyncStorage.getItem('token');
+    const headers = {
+        'content-type': 'application/json',
+        'authorization': 'Bearer ' + token
+    }
+
+    const response = await pantreazyApi.post("/foods/addPantryItem", { barcode, quantity }, { headers: headers }).catch((error) => {
+        if (error.response.status == 400) {
+            console.log(error.response.data.message)
+        }
+    });
+
+    dispatch({ type: 'save_pantry_item' })
+    RootNavigation.navigate('Home');
+}
+
+const get_user = (dispatch) => async () => {
     try {
         const token = await AsyncStorage.getItem('token');
-
         const headers = {
             'content-type': 'application/json',
             'authorization': 'Bearer ' + token
         }
-
-        const response = await pantreazyApi.post("/foods/addPantryItem", { barcode, quantity }, { headers: headers });
-
-        // Need to figure out logic to handle the request when an item is already added
-
-        dispatch({ type: 'save_pantry_item' })
-        RootNavigation.navigate('Home');
+        const response = await pantreazyApi.get("/accounts/getById", { headers: headers }).catch((error) => {
+            console.log(error)
+        })
+        dispatch({ type: 'get_user', payload: response.data })
     } catch (err) {
         console.log(err);
+        RootNavigation.navigate('Home');
+
     }
+
+
 }
 
 // Retrieves all the scanned items from the user
@@ -72,6 +91,6 @@ const get_pantry = (dispatch) => async () => {
 
 export const { Provider, Context } = createDataContext(
     mainReducer,
-    { scan_barcode, save_pantry_item, get_pantry },
+    { scan_barcode, save_pantry_item, get_pantry, get_user },
     { token: null, errorMessage: "", response: null }
 )

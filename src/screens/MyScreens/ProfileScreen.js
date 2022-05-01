@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useContext } from "react";
 import { StyleSheet, View } from "react-native";
 import ProfileHeader from "../../components/Profile/ProfileHeader";
 import UserPic from "../../components/Profile/UserPic";
@@ -6,16 +6,22 @@ import ProfileName from "../../components/Profile/ProfileName";
 import ProfileEmail from "../../components/Profile/ProfileEmail";
 import HelpBtn from "../../components/Profile/HelpBtn";
 import SignOutBtn from "../../components/Profile/SignOutBtn";
+import { Context as FoodContext } from "../../context/mainContext";
 
 const ProfileScreen = (props) => {
+  const { state, get_user } = useContext(FoodContext);
+  useEffect(() => {
+    get_user();
+  }, [])
+
   return (
     <View style={styles.container}>
-      <ProfileHeader style={styles.materialHeader41}></ProfileHeader>
-      <UserPic style={styles.userPic}></UserPic>
-      <ProfileName style={styles.profileName}></ProfileName>
-      <ProfileEmail style={styles.profileEmail}></ProfileEmail>
-      <HelpBtn style={styles.materialChipWithCloseButton}></HelpBtn>
-      <SignOutBtn style={styles.materialChipWithCloseButton}></SignOutBtn>
+      <ProfileHeader style={styles.materialHeader41} />
+      <UserPic style={styles.userPic} />
+      <ProfileName style={styles.profileName} profileName={state.response.firstName + " " + state.response.lastName} />
+      <ProfileEmail style={styles.profileEmail} profileEmail={state.response.email} />
+      <HelpBtn style={styles.materialChipWithCloseButton} />
+      <SignOutBtn style={styles.materialChipWithCloseButton} />
     </View>
   );
 }

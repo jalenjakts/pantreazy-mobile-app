@@ -54,6 +54,7 @@ const login = (dispatch) => async ({ email, password }) => {
         const response = await pantreazyApi.post('/accounts/authenticate', { email, password });
         await AsyncStorage.setItem("token", response.data.jwtToken);
         dispatch({ type: 'login', payload: response.data.jwtToken })
+        // console.log(response.data.jwtToken);
         RootNavigation.navigate('MainFlow');
     } catch (err) {
         dispatch({

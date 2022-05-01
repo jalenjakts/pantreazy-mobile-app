@@ -9,7 +9,7 @@ const mainReducer = (state, action) => {
         case "scan_barcode":
             return { ...state, response: action.payload };
         case "save_pantry_item":
-            return { ... state}
+            return { ...state }
         default:
             return state;
     }
@@ -25,21 +25,23 @@ const scan_barcode = (dispatch) => async ({ data }) => {
     }
 }
 
-const save_pantry_item = (dispatch) => async ({barcode, quantity}) => {
-    try{
+const save_pantry_item = (dispatch) => async ({ barcode, quantity }) => {
+    try {
         const token = await AsyncStorage.getItem('token');
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token
         }
 
-        const response = await pantreazyApi.post("/foods/addPantryItem", {barcode, quantity}, {headers: headers});
+        console.log(barcode, quantity);
 
-        console.log(response.data);
+        const response = await pantreazyApi.post("/foods/addPantryItem", { barcode, quantity }, { headers: headers });
 
-        dispatch({type: 'save_pantry_item'})
+        console.log(response.data.message);
+
+        dispatch({ type: 'save_pantry_item' })
         RootNavigation.navigate('Home');
-    } catch (err){
+    } catch (err) {
         console.log(err);
     }
 }

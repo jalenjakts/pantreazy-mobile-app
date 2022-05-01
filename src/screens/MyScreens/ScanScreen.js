@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import { Context as FoodContext } from "../../context/mainContext";
 
-const ScanScreen = () => {
+const ScanScreen = ({ navigation }) => {
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
+
+    const { state, scan_barcode } = useContext(FoodContext);
 
     useEffect(() => {
         (async () => {
@@ -15,7 +18,8 @@ const ScanScreen = () => {
 
     const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
-        alert(`Bar code with type ${type} and data ${data} has been scanned!`)
+        alert(`Bar code with type ${type} and data ${data} has been scanned!`) // Need to eventually comment that out
+        scan_barcode({ data });
     }
 
     if (hasPermission === null) {

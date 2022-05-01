@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, ScrollView, View } from "react-native";
 import MeatsBtn from "../../components/Home/MeatsBtn";
 import VegetableBtn from "../../components/Home/VegetableBtn";
 import FruitBtn from "../../components/Home/FruitBtn";
@@ -10,9 +10,9 @@ import OilBtn from "../../components/Home/OilBtn";
 import DryGoodBtn from "../../components/Home/DryGoodBtn";
 import HomeHeader from "../../components/Home/HomeHeader";
 
-function HomeScreen(props) {
+const HomeScreen = (props) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <HomeHeader style={styles.materialHeader3}></HomeHeader>
       <View style={styles.row1}>
         <MeatsBtn style={styles.meat}></MeatsBtn>
@@ -30,7 +30,7 @@ function HomeScreen(props) {
         <OilBtn style={styles.oil}></OilBtn>
         <DryGoodBtn style={styles.dry}></DryGoodBtn>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

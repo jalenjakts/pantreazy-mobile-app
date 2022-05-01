@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
 
-function ScannerHeader(props) {
+const ScannerHeader = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity /* Conditional navigation not supported at the moment */
-          onPress={() => console.log("Navigate to Go Back")}
+          onPress={() => navigation.navigate('Barcode')}
           style={styles.leftIconButton}
         >
           <MaterialCommunityIconsIcon
@@ -23,7 +25,7 @@ function ScannerHeader(props) {
       </View>
       <View style={styles.leftIconButtonRowFiller}></View>
       <TouchableOpacity /* Conditional navigation not supported at the moment */
-        onPress={() => console.log("Navigate to HomeScreen")}
+        onPress={() => navigation.navigate('Home')}
         style={styles.rightIconButton}
       >
         <MaterialCommunityIconsIcon

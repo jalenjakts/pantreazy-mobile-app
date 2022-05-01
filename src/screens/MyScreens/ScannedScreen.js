@@ -6,22 +6,17 @@ import ScanName from "../../components/Scanned/ScanName";
 import AcceptBtn from "../../components/Scanned/AcceptBtn";
 import NutritionalFacts from "../../components/Scanned/NutritionalFacts";
 import ScanItemPic from "../../components/Scanned/ScanItemPic";
+import PostScanForm from "../../components/Scanned/PostScanForm";
 
-function ScannedScreen(props) {
+const ScannedScreen = (props) => {
   return (
     <View style={styles.container}>
       <ScannerHeader
         leftIconButton="Go Back"
         rightIconButton="HomeScreen"
         style={styles.materialHeader1}
-      ></ScannerHeader>
-      <ScanItemPic style={styles.scanItemPic}></ScanItemPic>
-      <ScanName style={styles.scanName}></ScanName>
-      <NutritionalFacts style={styles.nutritionalFacts}></NutritionalFacts>
-      <ScannedItemCnt
-        style={styles.cupertinoSegmentWithThreeTabs}
-      ></ScannedItemCnt>
-      <AcceptBtn style={styles.cupertinoButtonSuccess}></AcceptBtn>
+      />
+      <PostScanForm />
     </View>
   );
 }

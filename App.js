@@ -106,7 +106,7 @@ export default function App() {
             />
             <Stack.Screen
               name="ScanDetail"
-              component={ScannedScreen}
+              component={ScanDetailScreen}
             />
           </Stack.Navigator>
         </MainProvider>

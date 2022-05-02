@@ -10,17 +10,23 @@ import { Context as FoodContext } from "../../context/mainContext";
 
 const ProfileScreen = (props) => {
   const { state, get_user } = useContext(FoodContext);
-  console.log(state.response);
   useEffect(() => {
     get_user();
-  }, [])
+  })
 
+  var profileName = "Test Tester";
+  var profileEmail = "tester@gmail.com";
+
+  if (state.response != null) {
+    profileName = state.response.firstName + " " + state.response.lastName;
+    profileEmail = state.response.email;
+  }
   return (
     <View style={styles.container}>
       <ProfileHeader style={styles.materialHeader41} />
       <UserPic style={styles.userPic} />
-      <ProfileName style={styles.profileName} profileName={state.response.firstName + " " + state.response.lastName} />
-      <ProfileEmail style={styles.profileEmail} profileEmail={state.response.email} />
+      <ProfileName style={styles.profileName} profileName={profileName} />
+      <ProfileEmail style={styles.profileEmail} profileEmail={profileEmail} />
       <HelpBtn style={styles.materialChipWithCloseButton} />
       <SignOutBtn style={styles.materialChipWithCloseButton} />
     </View>
@@ -61,7 +67,7 @@ const styles = StyleSheet.create({
       height: 3
     },
     elevation: 5,
-    shadowOpacity: 0.69,
+    shadowOpacity: 0,
     shadowRadius: 0,
     marginTop: 68,
     alignSelf: "center"

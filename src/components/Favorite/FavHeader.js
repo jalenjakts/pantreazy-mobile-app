@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
@@ -9,21 +9,19 @@ const FavHeader = (props) => {
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.leftIconButton}
+          onPress={() => navigation.openDrawer()}
+          style={styles.profileBtn}
         >
           <MaterialCommunityIconsIcon
-            name="backspace"
-            style={styles.leftIcon}
-          ></MaterialCommunityIconsIcon>
+            name="menu"
+            style={styles.profileIcon}
+          />
         </TouchableOpacity>
         <View style={styles.textWrapper}>
-          <Text numberOfLines={1} style={styles.favorites}>
-            Favorites
-          </Text>
+          <Text numberOfLines={1} style={styles.favorites}>Favorites</Text>
         </View>
       </View>
-      <View style={styles.leftIconButtonRowFiller}></View>
+      <View style={styles.leftIconButtonRowFiller} />
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
           onPress={() => navigation.navigate('Search')}
@@ -32,7 +30,7 @@ const FavHeader = (props) => {
           <MaterialCommunityIconsIcon
             name="magnify"
             style={styles.rightIcon1}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate('Home')}
@@ -41,7 +39,7 @@ const FavHeader = (props) => {
           <MaterialCommunityIconsIcon
             name="home"
             style={styles.rightIcon2}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate("Barcode")}
@@ -50,7 +48,7 @@ const FavHeader = (props) => {
           <MaterialCommunityIconsIcon
             name="barcode-scan"
             style={styles.rightIcon3}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -73,10 +71,10 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2,
     elevation: 3
   },
-  leftIconButton: {
+  profileBtn: {
     padding: 9
   },
-  leftIcon: {
+  profileIcon: {
     backgroundColor: "transparent",
     color: "#FFFFFF",
     fontSize: 24

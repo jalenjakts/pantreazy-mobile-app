@@ -1,13 +1,15 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-function HelpBtn(props) {
+const HelpBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <View style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('Help')}>
       <Text style={styles.help}>Help</Text>
       <Icon name="comment-question" style={styles.iconStyle}></Icon>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -18,14 +20,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingLeft: 12,
     borderRadius: 50,
-    backgroundColor: "rgba(0,159,37,0.22)"
+    backgroundColor: "rgba(0,159,37,1)"
   },
   help: {
     fontSize: 16,
-    color: "rgba(0,0,0,0.87)"
+    color: "#FFFFFF"
   },
   iconStyle: {
-    color: "#9E9E9E",
+    color: "#FFFFFF",
     fontSize: 24,
     marginLeft: 4,
     marginRight: 4

@@ -9,12 +9,12 @@ const SearchRecipeHeader = (props) => {
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.leftIconButton}
+          onPress={() => console.log("Navigate to ProfileScreen")}
+          style={styles.profileBtn}
         >
           <MaterialCommunityIconsIcon
-            name="backspace"
-            style={styles.leftIcon}
+            name="menu"
+            style={styles.profileIcon}
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <View style={styles.textWrapper}>
@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2,
     elevation: 3
   },
-  leftIconButton: {
+  profileBtn: {
     padding: 9
   },
-  leftIcon: {
+  profileIcon: {
     backgroundColor: "transparent",
     color: "#FFFFFF",
     fontSize: 24

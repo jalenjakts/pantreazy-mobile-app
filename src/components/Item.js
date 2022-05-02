@@ -8,6 +8,13 @@ const Item = (props) => {
   const { state, get_pantry } = useContext(FoodContext);
   const [pantry, setPantry] = useState([]);
 
+  useEffect(() => {
+    get_pantry();
+    if (state.response != null) {
+      console.log(state.response);
+    }
+  }, [])
+
   return (
     <View style={[styles.container, props.style]}>
       <ItemPic style={styles.itemPic}></ItemPic>

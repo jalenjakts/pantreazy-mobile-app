@@ -16,6 +16,7 @@ const LoginForm = () => {
   const { state, login, clearErrorMessage } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [secure, setSecure] = useState(true);
   return (
     <>
       <View style={styles.container}>
@@ -30,11 +31,11 @@ const LoginForm = () => {
         <Icon name="account-box" style={styles.iconStyle} />
       </View>
 
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={() => (secure == false) ? setSecure(true) : setSecure(false)}>
         <TextInput
           placeholder="Password"
           style={styles.inputStyle}
-          secureTextEntry
+          secureTextEntry={secure}
           value={password}
           onChangeText={setPassword}
         />

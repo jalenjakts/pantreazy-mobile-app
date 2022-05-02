@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
     shadowRadius: 0
   },
 
-<<<<<<< HEAD
 
   row2: {
     height: 147,
@@ -90,9 +89,6 @@ const styles = StyleSheet.create({
     marginTop: 25
   },
 
-=======
-  
->>>>>>> 241c02914ae0faf44f6a3cd89b6b2fc64a0dc161
 
 });
 

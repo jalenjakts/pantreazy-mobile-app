@@ -29,7 +29,7 @@ function RecipeHeader(props) {
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
-            name="magnify"
+            name="star"
             style={styles.rightIcon1}
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>

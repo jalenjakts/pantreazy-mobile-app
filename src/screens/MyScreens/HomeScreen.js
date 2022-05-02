@@ -4,13 +4,7 @@ import HomeHeader from "../../components/Home/HomeHeader";
 import { Context as FoodContext } from "../../context/mainContext";
 import Item from "../../components/Item";
 
-const HomeScreen = ({ navigation }) => {
-  const { state, get_pantry } = useContext(FoodContext);
-  useEffect(() => {
-    get_pantry();
-  }, [])
-
-
+const HomeScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <HomeHeader style={styles.materialHeader3} />
@@ -19,17 +13,9 @@ const HomeScreen = ({ navigation }) => {
         <Item style={styles.item1} />
         <Text style={styles.loremIpsum} />
       </View>
-      <View style={styles.row2}>
-
-      </View>
-      <View style={styles.row3}>
-
-      </View>
-      <View style={styles.row4}>
-
-      </View>
     </ScrollView>
   );
+
 }
 
 const styles = StyleSheet.create({
@@ -48,10 +34,8 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontSize: 60,
     height: 90,
-    width: "90%",
     marginTop: "10%",
-    marginLeft: "4%",
-    //alignSelf: "center"
+    alignSelf: 'center'
   },
   row1: {
     height: 147,

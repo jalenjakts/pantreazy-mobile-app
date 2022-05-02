@@ -17,9 +17,7 @@ function HomeHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <View style={styles.textWrapper}>
-          <Text numberOfLines={1} style={styles.home}>
-            Home
-          </Text>
+          <Text numberOfLines={1} style={styles.home}>Home</Text>
         </View>
       </View>
       <View style={styles.leftIconButtonRowFiller}></View>

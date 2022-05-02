@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-function ItemName(props) {
+const ItemName = (props) => {
   return (
     <View style={[styles.container, props.style]}>
       <Text style={styles.name1}>Name very very long</Text>

@@ -1,9 +1,13 @@
-import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useContext, useEffect, useState } from "react";
+import { StyleSheet, View, Text } from "react-native";
 import ItemPic from "./ItemPic";
 import ItemName from "./ItemName";
+import { Context as FoodContext } from "../context/mainContext";
 
-function Item(props) {
+const Item = (props) => {
+  const { state, get_pantry } = useContext(FoodContext);
+  const [pantry, setPantry] = useState([]);
+
   return (
     <View style={[styles.container, props.style]}>
       <ItemPic style={styles.itemPic}></ItemPic>
@@ -24,7 +28,7 @@ const styles = StyleSheet.create({
 
   itemName: {
     height: 19,
-    width: 108,
+    width: "100%",
     backgroundColor: "#fff",
     marginTop: 0
   }

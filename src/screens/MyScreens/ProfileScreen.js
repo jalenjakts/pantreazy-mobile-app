@@ -12,12 +12,12 @@ const ProfileScreen = (props) => {
   const { state, get_user } = useContext(FoodContext);
   useEffect(() => {
     get_user();
-  }, [])
+  })
 
   var profileName = "Test Tester";
   var profileEmail = "tester@gmail.com";
 
-  if (state != null) {
+  if (state.response != null) {
     profileName = state.response.firstName + " " + state.response.lastName;
     profileEmail = state.response.email;
   }

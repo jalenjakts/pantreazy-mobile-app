@@ -1,20 +1,19 @@
 import React, { useContext, useEffect } from "react";
-import { StyleSheet, ScrollView, View } from "react-native";
+import { StyleSheet, ScrollView, View, Text } from "react-native";
 import HomeHeader from "../../components/Home/HomeHeader";
 import { Context as FoodContext } from "../../context/mainContext";
+import Item from "../../components/Item";
 
 const HomeScreen = ({ navigation }) => {
   const { get_pantry } = useContext(FoodContext);
 
   return (
     <ScrollView style={styles.container}>
-      <HomeHeader style={styles.materialHeader3}></HomeHeader>
-      <Text style={styles.loremIpsum}>
-        Pantry,
-      </Text>
+      <HomeHeader style={styles.materialHeader3} />
+      <Text style={styles.loremIpsum}>Pantry</Text>
       <View style={styles.row1}>
-        <Item style={styles.item1}></Item>
-        <Text style={styles.loremIpsum}></Text>
+        <Item style={styles.item1} />
+        <Text style={styles.loremIpsum} />
       </View>
       <View style={styles.row2}>
 

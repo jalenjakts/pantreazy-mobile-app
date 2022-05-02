@@ -9,9 +9,11 @@ import LoginScreen from "./src/screens/MyScreens/LoginScreen";
 import SignupScreen from "./src/screens/MyScreens/SignupScreen";
 import ProfileScreen from "./src/screens/MyScreens/ProfileScreen";
 import HomeScreen from "./src/screens/MyScreens/HomeScreen"
+import FavScreen from "./src/screens/MyScreens/FavScreen";
 import ForgotPassScreen from "./src/screens/MyScreens/ForgotPassScreen";
 import ForgotPassword from "./src/screens/MyScreens/ForgotPassword";   
 import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
+import ScannedScreen from "./src/screens/MyScreens/ScannedScreen";
 import ScanDetailScreen from "./src/screens/TestScreens/ScanDetailScreen";
 import Scanner from "./src/screens/MyScreens/Scanner";
 import ProductDetails from "./src/screens/MyScreens/ProductDetails";

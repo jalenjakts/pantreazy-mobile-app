@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 function FpEmail(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <TextInput placeholder="Email" style={styles.inputStyle}></TextInput>
+      <TextInput placeholder="Email" style={styles.inputStyle} autoCapitalize="none" />
       <Icon name="account-box" style={styles.iconStyle}></Icon>
     </View>
   );

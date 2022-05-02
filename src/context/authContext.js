@@ -12,6 +12,8 @@ const authReducer = (state, action) => {
             return { ...state, errorMessage: "" };
         case "signup":
             return { ...state }
+        case "verify_email":
+            return { ...state }
         case "login":
             return { ...state, token: action.payload }
         case "signout":
@@ -21,6 +23,7 @@ const authReducer = (state, action) => {
     }
 }
 
+// Clears the error message that gets render
 const clearErrorMessage = (dispatch) => () => {
     dispatch({ type: "clear_error_message" });
 }
@@ -70,8 +73,27 @@ const signout = (dispatch) => async () => {
     RootNavigation.navigate('AuthFlow');
 }
 
+const verify_email = (dispatch) => async ({ email }) => {
+    try {
+        const token = AsyncStorage.getItem("token");
+        const headers = {
+            'content-type': 'application/json',
+            'authorization': 'Bearer ' + token
+        }
+        const response = await pantreazyApi.post('/accounts/forgot-password', { email }, { headers: headers }).catch((error) => {
+            console.log(error)
+        })
+        console.log(response.data);
+        dispatch({ type: 'verify_email' });
+
+        RootNavigation.navigate('Login');
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { signup, login, clearErrorMessage, tryLocalLogin, signout },
+    { signup, login, clearErrorMessage, tryLocalLogin, signout, verify_email },
     { token: null, errorMessage: "" }
 )

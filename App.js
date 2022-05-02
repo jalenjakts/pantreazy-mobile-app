@@ -6,12 +6,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import 'react-native-gesture-handler';
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useFonts } from "@use-expo/font";
-
+import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
 // Authorizations Screens
 import LoginScreen from "./src/screens/MyScreens/LoginScreen";
 import SignupScreen from "./src/screens/MyScreens/SignupScreen";
-import ForgotPassScreen from "./src/screens/MyScreens/ForgotPassScreen";
+import ForgotPassword from "./src/screens/MyScreens/ForgotPassword";
 import ResolveAuthScreen from "./src/screens/resolveAuthScreen";
 
 // Home Drawer Route Screens
@@ -97,7 +97,7 @@ const AuthFlow = () => {
         component={SignupScreen}
         options={{ headerShown: false }}
       />
-      <AuthStack.Screen name="Forgot" component={ForgotPassScreen} />
+      <AuthStack.Screen name="Forgot" component={ForgotPassword} options={{ headerShown: false }} />
       <AuthStack.Screen name="ResolveAuth" component={ResolveAuthScreen} />
     </AuthStack.Navigator>
   );
@@ -157,7 +157,16 @@ export default function App() {
     "roboto-regular": require('./assets/fonts/roboto-regular.ttf')
   }
 
-  useFonts(customFonts)
+  let [fontsLoaded] = useFonts({
+    "beau-rivage-regular": require("./assets/fonts/beau-rivage-regular.ttf"),
+    "roboto-700": require("./assets/fonts/roboto-700.ttf"),
+    "roboto-regular": require('./assets/fonts/roboto-regular.ttf')
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
+
   return (
     <NavigationContainer ref={navigationRef}>
       <AuthProvider>

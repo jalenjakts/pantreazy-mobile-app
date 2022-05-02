@@ -1,37 +1,36 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
-//import RecipeName from "../Recipe/RecItemName";
-import { useNavigation } from "@react-navigation/native";
 
-const RecipeHeader = (props) => {
+function SearchRecipeHeader(props) {
   const navigation = useNavigation();
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
-          style={styles.leftIconButton}
+          style={styles.profileBtn}
         >
           <MaterialCommunityIconsIcon
-            name="backspace"
-            style={styles.leftIcon}
+            name="menu"
+            style={styles.profileIcon}
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <View style={styles.textWrapper}>
-          <Text numberOfLines={1} style={styles.recipe}>
-            Recipes
+          <Text numberOfLines={1} style={styles.help}>
+            Info
           </Text>
         </View>
       </View>
       <View style={styles.leftIconButtonRowFiller}></View>
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Search')}
+          onPress={() => navigation.navigate('Home')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
-            name="star"
+            name="home"
             style={styles.rightIcon1}
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
@@ -61,6 +60,7 @@ const RecipeHeader = (props) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "rgba(0,159,37,1)",
+    //width: "100%",
     flexDirection: "row",
     alignItems: "center",
     padding: 4,
@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2,
     elevation: 3
   },
-  leftIconButton: {
+  profileBtn: {
     padding: 9
   },
-  leftIcon: {
+  profileIcon: {
     backgroundColor: "transparent",
     color: "#FFFFFF",
     fontSize: 24
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginLeft: 26,
     marginBottom: 11
   },
-  recipe: {
+  help: {
     fontSize: 18,
     color: "#FFFFFF",
     backgroundColor: "transparent",
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   leftIconButtonRow: {
     flexDirection: "row",
-    marginTop: 25,
+    marginTop: 28,
     marginBottom: 0
   },
   leftIconButtonRowFiller: {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   rightIconsWrapper: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 25
+    marginTop: 28
   },
   iconButton: {
     padding: 11
@@ -127,4 +127,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default RecipeHeader;
+export default SearchRecipeHeader;

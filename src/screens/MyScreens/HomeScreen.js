@@ -13,6 +13,14 @@ const HomeScreen = () => {
         <Item style={styles.item1} />
         <Text style={styles.loremIpsum} />
       </View>
+      <View style={styles.row2}>
+        <Item style={styles.item1} />
+        <Text style={styles.loremIpsum} />
+      </View>
+      <View style={styles.row3}>
+        <Item style={styles.item1} />
+        <Text style={styles.loremIpsum} />
+      </View>
     </ScrollView>
   );
 
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: "4%",
-    height: "0%",
+    //height: "10%",
     width: "28%",
     shadowColor: "rgba(0,0,0,1)",
     shadowOffset: {

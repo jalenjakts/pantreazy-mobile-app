@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import ProfileHeader from "../../components/Profile/ProfileHeader";
 import UserPic from "../../components/Profile/UserPic";
 import ProfileName from "../../components/Profile/ProfileName";

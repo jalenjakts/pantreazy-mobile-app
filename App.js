@@ -48,12 +48,10 @@ const MainDrawerFlow = () => {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "Barcode") {
             iconName = focused ? "barcode" : "barcode-outline";
-          } else if (route.name === "Search") {
-            iconName = focused ? "search" : "search-outline";
-          } else if (route.name === "Favorites") {
-            iconName = focused ? "heart" : "heart-outline";
           } else if (route.name === "Recipes") {
             iconName = focused ? "fast-food" : "fast-food-outline";
+          } else if (route.name === "Favorites") {
+            iconName = focused ? "heart" : "heart-outline";
           } else if (route.name === "Profile") {
             iconName = focused ? "settings" : "settings-outline";
           } else {
@@ -67,9 +65,8 @@ const MainDrawerFlow = () => {
       })}>
       <MainDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Barcode" component={Scanner} options={{ headerShown: false }} />
-      <MainDrawer.Screen name="Search" component={SearchRecipeScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Recipes" component={SearchRecipeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
-      <MainDrawer.Screen name="Recipes" component={RecipeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false, }} />
     </MainDrawer.Navigator>
   )
@@ -136,65 +133,14 @@ export default function App() {
               component={HelpScreen}
               options={{ headerShown: false }}
             />
+            <AppStack.Screen
+              name="Recipe"
+              component={RecipeScreen}
+              options={{ headerShown: false }}
+            />
           </AppStack.Navigator>
         </MainProvider>
       </AuthProvider>
     </NavigationContainer>
   );
 }
-
-// function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator>
-//         <Stack.Screen
-//           name="BottomNav"
-//           component={BottomNav}
-//           options={{ headerShown: false }}
-//         />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
-
-// export default App;
-
-// function BottomNav() {
-//   return (
-//     <Tab.Navigator
-//       screenOptions={({ route }) => ({
-//         tabBarIcon: ({ focused, color, size }) => {
-//           let iconName;
-
-//           if (route.name === "Home") {
-//             iconName = focused ? "ios-home" : "ios-home-outline";
-//           } else if (route.name === "Scan") {
-//             iconName = focused ? "ios-barcode" : "ios-barcode-outline";
-//           } else if (route.name === "Login") {
-//             iconName = focused ? "ios-home" : "ios-home";
-//           }
-
-//           return <Ionicons name={iconName} size={size} color={color} />;
-//         },
-//         tabBarActiveTintColor: "green",
-//         tabBarInactiveTintColor: "gray",
-//       })}
-//     >
-//       <Tab.Screen
-//         name="Home"
-//         component={HomeScreen}
-//         options={{ headerShown: false }}
-//       />
-//       <Tab.Screen
-//         name="Scan"
-//         component={ScanScreen}
-//         options={{ headerShown: false }}
-//       />
-//       <Tab.Screen
-//         name="Login"
-//         component={LoginScreen}
-//         options={{ headerShown: false }}
-//       />
-//     </Tab.Navigator>
-//   );
-// }

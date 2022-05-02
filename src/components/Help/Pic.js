@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, Image } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
-function UserPic(props) {
+function Pic(props) {
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.ellipseStack}>
@@ -10,7 +10,7 @@ function UserPic(props) {
           <Ellipse
             stroke="rgba(230, 230, 230,1)"
             strokeWidth={0}
-            fill="rgba(230, 230, 230,1)"
+            //fill="rgba(230, 230, 230,1)"
             cx={70}
             cy={70}
             rx={70}
@@ -18,7 +18,7 @@ function UserPic(props) {
           ></Ellipse>
         </Svg>
         <Image
-          source={require("../../../assets/images/Chef-icon.jpg")}
+          source={require("../../../assets/images/mix.jpg")}
           resizeMode="contain"
           style={styles.image}
         ></Image>
@@ -32,23 +32,26 @@ const styles = StyleSheet.create({
     borderRadius: 100
   },
   ellipse: {
-    width: 140,
-    height: 140,
+    alignSelf: "center",
+    width: 240,
+    height: 240,
     position: "absolute",
     left: 0,
-    top: 0
+    top: 30
   },
   image: {
-    top: 0,
+    alignSelf: "center",
+    top: 50,
     left: 0,
-    width: 140,
-    height: 140,
+    width: "100%",
+    height: "100%",
     position: "absolute",
   },
   ellipseStack: {
-    width: 140,
-    height: 140
+    alignSelf: "center",
+    width: 340,
+    height: 340
   }
 });
 
-export default UserPic;
+export default Pic;

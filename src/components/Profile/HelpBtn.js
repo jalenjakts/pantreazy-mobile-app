@@ -7,7 +7,7 @@ const HelpBtn = (props) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('Help')}>
-      <Text style={styles.help}>Help</Text>
+      <Text style={styles.help}>Info</Text>
       <Icon name="comment-question" style={styles.iconStyle}></Icon>
     </TouchableOpacity>
   );

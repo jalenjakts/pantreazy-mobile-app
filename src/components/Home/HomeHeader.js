@@ -23,7 +23,7 @@ function HomeHeader(props) {
       <View style={styles.leftIconButtonRowFiller}></View>
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Search")}
+          onPress={() => navigation.navigate("Recipes")}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon

@@ -8,12 +8,12 @@ const ScannerHeader = (props) => {
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
-        <TouchableOpacity /* Conditional navigation not supported at the moment */
-          onPress={() => navigation.goBack()}
+        <TouchableOpacity
+          onPress={() => navigation.openDrawer()}
           style={styles.leftIconButton}
         >
           <MaterialCommunityIconsIcon
-            name="backspace"
+            name="menu"
             style={styles.leftIcon}
           />
         </TouchableOpacity>

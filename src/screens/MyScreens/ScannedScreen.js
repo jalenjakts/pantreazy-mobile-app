@@ -20,6 +20,36 @@ const styles = StyleSheet.create({
     height: 80,
     width: "100%"
   },
+  scanItemPic: {
+    height: "30%",
+    width: "90%",
+    marginTop: 0,
+    marginLeft: 40
+  },
+  scanName: {
+    height: 85,
+    width: "95%",
+    marginTop: 0,
+    alignSelf: "center"
+  },
+  nutritionalFacts: {
+    height: 258,
+    width: "90%",
+    marginTop: 2,
+    marginLeft: "5%"
+  },
+  cupertinoSegmentWithThreeTabs: {
+    height: 56,
+    width: "100%",
+    marginTop: 0
+  },
+  cupertinoButtonSuccess: {
+    height: 44,
+    width: "90%",
+    borderRadius: 30,
+    marginTop: 10,
+    alignSelf: "center"
+  }
 });
 
 export default ScannedScreen;

@@ -6,9 +6,9 @@ import RecSearchItem from "../../components/SearchRecipe/RecSearchItem";
 function SearchRecipeScreen(props) {
   return (
     <View style={styles.container}>
-      <SearchRecipeHeader style={styles.header}></SearchRecipeHeader>
+      <SearchRecipeHeader style={styles.header} />
       <View style={styles.row1}>
-        <RecSearchItem style={styles.recItem}></RecSearchItem>
+        <RecSearchItem style={styles.recItem} />
       </View>
     </View>
   );

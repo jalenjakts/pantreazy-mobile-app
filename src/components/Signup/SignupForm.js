@@ -7,6 +7,7 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Context as AuthContext } from "../../context/authContext";
 
 const SignupForm = () => {
@@ -16,9 +17,10 @@ const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPass] = useState("");
+  const navigation = useNavigation();
   
   return (
-    <ScrollView>
+    <>
       <View style={styles.container}>
         <Text style={styles.textName}>FIRST NAME</Text>
         <TextInput
@@ -73,21 +75,23 @@ const SignupForm = () => {
           onChangeText={setConfirmPass}
         />
       </View>
+
       {state.errorMessage ? (
         <Text style={styles.errorMessage}>{state.errorMessage}</Text>
       ) : null}
+
       <TouchableOpacity
         style={[styles.buttonContainer, styles.buttonContainer2]}
       >
         <Text style={styles.createNewAccount}>Create new account</Text>
         <TouchableOpacity
+          style={styles.button}
           onPress={() =>
             signup({ firstName, lastName, email, password, confirmPassword })
           }
-          style={styles.button}
-        />
+        ></TouchableOpacity>
       </TouchableOpacity>
-    </ScrollView>
+    </>
   );
 };
 
@@ -99,6 +103,7 @@ const styles = StyleSheet.create({
     width: "70%",
     height: 60,
     marginTop: "5%",
+    //marginBottom:5,
     marginLeft: "15%",
   },
   textName: {
@@ -122,7 +127,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-    borderRadius: 2,
+    borderRadius: 30,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -162,8 +167,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'red',
     marginLeft: 15,
-    marginTop: 5
-  }
+    marginTop: 15
+  },
 });
 
 export default SignupForm;

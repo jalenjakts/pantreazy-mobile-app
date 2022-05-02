@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 import HelpHeader from "../../components/Help/HelpHeader";
+import Pic from "../../components/Help/Pic";
 //import Header from "../../components/Header";
 
 function ForgotPassword(props) {
@@ -11,6 +12,7 @@ function ForgotPassword(props) {
         rightIconButton="HomeScreen"
         style={styles.materialHeader1}
       ></HelpHeader>
+      <Pic style={styles.userPic}></Pic>
       <Text style={styles.loremIpsum}>
         This is where we will put some helpful information.
       </Text>
@@ -25,6 +27,12 @@ const styles = StyleSheet.create({
   },
   materialHeader1: {
     height: 80
+  },
+  Pic: {
+    height: 140,
+    width: 140,
+    marginTop: 60,
+    alignSelf: "center"
   },
   loremIpsum: {
     fontFamily: "roboto-regular",

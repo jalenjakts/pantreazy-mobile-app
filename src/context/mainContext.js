@@ -58,8 +58,6 @@ const get_user = (dispatch) => async () => {
         const response = await pantreazyApi.get("/accounts/getById", { headers: headers }).catch((error) => {
             console.log(error)
         })
-
-        console.log(response)
         dispatch({ type: 'get_user', payload: response.data })
     } catch (err) {
         console.log(err);
@@ -81,9 +79,6 @@ const get_pantry = (dispatch) => async () => {
         }
 
         const response = await pantreazyApi.get("/foods/getPantry", { headers: headers })
-
-        console.log(response.data);
-
         dispatch({ type: 'get_pantry', payload: response.data })
 
     } catch (err) {

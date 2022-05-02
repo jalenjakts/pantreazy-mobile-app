@@ -6,10 +6,10 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 const SignOutBtn = (props) => {
   const { state, signout } = useContext(AuthContext);
   return (
-    <View style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => signout()}>
       <Text style={styles.signOut}>Sign Out</Text>
-      <Icon name="account" style={styles.iconStyle}></Icon>
-    </View>
+      <Icon name="account" style={styles.iconStyle} />
+    </TouchableOpacity>
   );
 }
 

@@ -5,7 +5,11 @@ import { Context as FoodContext } from "../../context/mainContext";
 import Item from "../../components/Item";
 
 const HomeScreen = ({ navigation }) => {
-  const { get_pantry } = useContext(FoodContext);
+  const { state, get_pantry } = useContext(FoodContext);
+  useEffect(() => {
+    get_pantry();
+  }, [])
+
 
   return (
     <ScrollView style={styles.container}>

@@ -23,6 +23,7 @@ import ScannedScreen from "./src/screens/MyScreens/ScannedScreen";
 import FavScreen from "./src/screens/MyScreens/FavScreen";
 import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
 import RecipeScreen from "./src/screens/MyScreens/RecipeScreen";
+import HelpScreen from "./src/screens/MyScreens/HelpScreen";
 
 
 // Custom Routes and Providers
@@ -128,6 +129,11 @@ export default function App() {
             <AppStack.Screen
               name="ScanDetail"
               component={ScannedScreen}
+              options={{ headerShown: false }}
+            />
+            <AppStack.Screen
+              name="Help"
+              component={HelpScreen}
               options={{ headerShown: false }}
             />
           </AppStack.Navigator>

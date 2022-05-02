@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingLeft: 12,
     borderRadius: 50,
-    backgroundColor: "rgba(0,159,37,0.22)"
+    backgroundColor: "rgba(0,159,37,1)"
   },
   help: {
     fontSize: 16,
-    color: "rgba(0,0,0,0.87)"
+    color: "#FFFFFF"
   },
   iconStyle: {
-    color: "#9E9E9E",
+    color: "#FFFFFF",
     fontSize: 24,
     marginLeft: 4,
     marginRight: 4

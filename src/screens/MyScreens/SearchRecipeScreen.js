@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import RecipeSearchBar from "../../components/SearchRecipe/RecipeSearchBar";
 import SearchRecipeHeader from "../../components/SearchRecipe/SearchRecipeHeader";
 import RecSearchItem from "../../components/SearchRecipe/RecSearchItem";
 
@@ -8,10 +7,8 @@ function SearchRecipeScreen(props) {
   return (
     <View style={styles.container}>
       <SearchRecipeHeader style={styles.header}></SearchRecipeHeader>
-      <RecipeSearchBar style={styles.searchBar}></RecipeSearchBar>
-      <View style={styles.materialCard51Row}>
-        <RecSearchItem style={styles.materialCard51}></RecSearchItem>
-        <RecSearchItem style={styles.materialCard52}></RecSearchItem>
+      <View style={styles.row1}>
+        <RecSearchItem style={styles.recItem}></RecSearchItem>
       </View>
     </View>
   );
@@ -48,17 +45,13 @@ const styles = StyleSheet.create({
     shadowRadius: 0,
     marginTop: 0
   },
-  materialCard51: {
+  recItem: {
     height: 140,
     width: "44%",
     marginLeft: "4%"
   },
-  materialCard52: {
-    height: 140,
-    width: "44%",
-    marginLeft: "4%"
-  },
-  materialCard51Row: {
+
+  row1: {
     height: 140,
     flexDirection: "row",
     marginTop: 80,

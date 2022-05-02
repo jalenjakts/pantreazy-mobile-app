@@ -6,7 +6,7 @@ function SignOutBtn(props) {
   return (
     <View style={[styles.container, props.style]}>
       <Text style={styles.signOut}>Sign Out</Text>
-      <Icon name="account-location" style={styles.iconStyle}></Icon>
+      <Icon name="account" style={styles.iconStyle}></Icon>
     </View>
   );
 }
@@ -16,20 +16,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "rgba(0,159,37,0.22)",
+    backgroundColor: "rgba(0,159,37,1)",
     paddingLeft: 12,
     borderRadius: 50
   },
   signOut: {
     fontSize: 16,
-    color: "rgba(0,0,0,0.87)"
+    color: "#FFFFFF"
   },
   iconStyle: {
-    color: "#9E9E9E",
+    color: "#FFFFFF",
     fontSize: 24,
     marginLeft: 4,
     marginRight: 4
   }
 });
+
 
 export default SignOutBtn;

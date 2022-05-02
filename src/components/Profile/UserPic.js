@@ -18,7 +18,7 @@ function UserPic(props) {
           ></Ellipse>
         </Svg>
         <Image
-          //source={require("../assets/images/Chef-icon-600x600.jpg")}
+          //source={require("../../../assets/images/Chef-icon.jpg")}
           resizeMode="contain"
           style={styles.image}
         ></Image>

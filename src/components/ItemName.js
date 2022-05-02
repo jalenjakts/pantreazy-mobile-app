@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 function ItemName(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <Text style={styles.groundBeef1}>Name</Text>
+      <Text style={styles.name1}>Name very very long</Text>
     </View>
   );
 }
@@ -12,9 +12,10 @@ function ItemName(props) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#E6E6E6",
-    justifyContent: "center"
+    justifyContent: "center",
+    //height: 
   },
-  groundBeef1: {
+  name1: {
     fontFamily: "roboto-regular",
     color: "#121212",
     textAlign: "center",

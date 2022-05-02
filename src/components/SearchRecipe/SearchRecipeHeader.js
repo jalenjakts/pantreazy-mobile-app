@@ -9,13 +9,13 @@ const SearchRecipeHeader = (props) => {
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to ProfileScreen")}
+          onPress={() => navigation.openDrawer()}
           style={styles.profileBtn}
         >
           <MaterialCommunityIconsIcon
             name="menu"
             style={styles.profileIcon}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
         <View style={styles.textWrapper}>
           <Text numberOfLines={1} style={styles.recipes}>
@@ -23,7 +23,7 @@ const SearchRecipeHeader = (props) => {
           </Text>
         </View>
       </View>
-      <View style={styles.leftIconButtonRowFiller}></View>
+      <View style={styles.leftIconButtonRowFiller} />
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
           onPress={() => navigation.navigate('Home')}
@@ -32,7 +32,7 @@ const SearchRecipeHeader = (props) => {
           <MaterialCommunityIconsIcon
             name="home"
             style={styles.rightIcon1}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate('Favorites')}
@@ -41,7 +41,7 @@ const SearchRecipeHeader = (props) => {
           <MaterialCommunityIconsIcon
             name="heart"
             style={styles.rightIcon2}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate('Barcode')}
@@ -50,7 +50,7 @@ const SearchRecipeHeader = (props) => {
           <MaterialCommunityIconsIcon
             name="barcode-scan"
             style={styles.rightIcon3}
-          ></MaterialCommunityIconsIcon>
+          />
         </TouchableOpacity>
       </View>
     </View>

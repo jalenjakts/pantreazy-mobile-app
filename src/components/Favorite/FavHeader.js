@@ -9,7 +9,7 @@ const FavHeader = (props) => {
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to ProfileScreen")}
+          onPress={() => navigation.openDrawer()}
           style={styles.profileBtn}
         >
           <MaterialCommunityIconsIcon

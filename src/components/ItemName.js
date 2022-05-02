@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#E6E6E6",
     justifyContent: "center",
-    //height: 
   },
   name1: {
     fontFamily: "roboto-regular",

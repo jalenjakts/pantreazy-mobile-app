@@ -24,15 +24,6 @@ import FavScreen from "./src/screens/MyScreens/FavScreen";
 import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
 import RecipeScreen from "./src/screens/MyScreens/RecipeScreen";
 
-// Pantry Route Screens
-import MeatScreen from "./src/screens/MyScreens/MeatScreen";
-import VegScreen from "./src/screens/MyScreens/VegScreen";
-import FruitScreen from "./src/screens/MyScreens/FruitScreen";
-import DairyScreen from "./src/screens/MyScreens/DairyScreen";
-import SpiceScreen from "./src/screens/MyScreens/SpiceScreen";
-import GrainsScreen from "./src/screens/MyScreens/GrainsScreen";
-import OilsScreen from "./src/screens/MyScreens/OilsScreen";
-import DryGoodsScreen from "./src/screens/MyScreens/DryGoodsScreen";
 
 // Custom Routes and Providers
 import { Provider as AuthProvider } from "./src/context/authContext";
@@ -42,7 +33,6 @@ import { navigationRef } from "./src/RootNavigation";
 const AuthStack = createNativeStackNavigator();
 const MainDrawer = createDrawerNavigator();
 const AppStack = createNativeStackNavigator();
-const PantryStack = createNativeStackNavigator();
 
 const MainDrawerFlow = () => {
   return (
@@ -103,53 +93,6 @@ const AuthFlow = () => {
   );
 };
 
-const PantryFlow = () => {
-  return (
-    <PantryStack.Navigator>
-      <PantryStack.Screen
-        name="Meats"
-        component={MeatScreen}
-        options={{ headerShown: false }}
-      />
-      <PantryStack.Screen
-        name="Veggies"
-        component={VegScreen}
-        options={{ headerShown: false }}
-      />
-      <PantryStack.Screen
-        name="Fruits"
-        component={FruitScreen}
-        options={{ headerShown: false }}
-      />
-      <PantryStack.Screen
-        name="Dairy"
-        component={DairyScreen}
-        options={{ headerShown: false }}
-      />
-      <PantryStack.Screen
-        name="Spices"
-        component={SpiceScreen}
-        options={{ headerShown: false }}
-      />
-      <PantryStack.Screen
-        name="Grains"
-        component={GrainsScreen}
-        options={{ headerShown: false }}
-      />
-      <PantryStack.Screen
-        name="Oils"
-        component={OilsScreen}
-        options={{ headerShown: false }}
-      />
-      <PantryStack.Screen
-        name="DryGoods"
-        component={DryGoodsScreen}
-        options={{ headerShown: false }}
-      />
-    </PantryStack.Navigator>
-  )
-}
-
 export default function App() {
   const customFonts = {
     "beau-rivage-regular": require("./assets/fonts/beau-rivage-regular.ttf"),
@@ -180,11 +123,6 @@ export default function App() {
             <AppStack.Screen
               name="MainFlow"
               component={MainDrawerFlow}
-              options={{ headerShown: false }}
-            />
-            <AppStack.Screen
-              name="PantryFlow"
-              component={PantryFlow}
               options={{ headerShown: false }}
             />
             <AppStack.Screen

@@ -1,17 +1,12 @@
-# React-Native Expo Mobile App
+# Pantreazy Mobile App
 
-Welcome to the Expo Mobile App for SWE 4724. This project utilizes the Expo Library and React-Native Framework to manage the mobile application end point for project.
+Welcome to the Pantreazy Mobile App for SWE 4724. This project utilizes the Expo Library and React-Native Framework to manage the mobile application end point for project.
 
 This application can be ran in several different ways due to the expo application. This README will document all these changes.
 
 ## Project Tracking
 
 #### Contributors: Ben Dawit (BD), Tyler Hopkins (TH), Kyle Musgrove (KM), Jalen Springer (JS), and Raeven Whitfiled (RW)
-
-**Features and Project Requests**
-
-- [x] Showing how to do a checked item...
-- [ ] Task Item #1
 
 ## Initial Project Setup
 
@@ -70,7 +65,7 @@ Like stated in the description, this project can be ran in several ways. I'll go
 - The emulator will automatically install the Expo Application on the device, and then also open up the project.
 
 #### Run using Simulator with XCode
-- Uhhh I think I'm the only one using a Mac, but let me know otherwise to see if I need to write this out. I'm tired and feel lazy...
+- Run the following command expo start -i
 
 ## Resources & Guides
 - [Expo Documentation](https://docs.expo.dev)

@@ -12,7 +12,7 @@ function RecItemName(props) {
 const styles = StyleSheet.create({
   container: {},
   itemName: {
-    fontFamily: "roboto-700italic",
+    fontFamily: "roboto-700",
     color: "#121212",
     height: 25,
     fontSize: 20

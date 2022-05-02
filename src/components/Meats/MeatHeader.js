@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
 
-function MeatHeader(props) {
+const MeatHeader = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to Go Back")}
+          onPress={() => navigation.goBack()}
           style={styles.leftIconButton}
         >
           <MaterialCommunityIconsIcon
@@ -24,7 +26,7 @@ function MeatHeader(props) {
       <View style={styles.leftIconButtonRowFiller}></View>
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to RecipeScreen")}
+          onPress={() => navigation.navigate('Search')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -33,7 +35,7 @@ function MeatHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to FavScreen")}
+          onPress={() => navigation.navigate('Favorites')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -42,7 +44,7 @@ function MeatHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to Scanner")}
+          onPress={() => navigation.navigate('Barcode')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
   rightIconsWrapper: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:25
+    marginTop: 25
   },
   iconButton: {
     padding: 11

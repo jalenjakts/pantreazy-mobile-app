@@ -8,20 +8,20 @@ import Ingredients from "../../components/Recipe/Ingredients";
 import RecCookStepsText from "../../components/Recipe/RecCookStepsText";
 import CookSteps from "../../components/Recipe/CookSteps";
 
-function RecipeScreen(props) {
+const RecipeScreen = (props) => {
   return (
     <View style={styles.container}>
-      <RecipeHeader style={styles.materialHeader31}></RecipeHeader>
-      <RecPicture style={styles.recPicture}></RecPicture>
+      <RecipeHeader style={styles.materialHeader31} />
+      <RecPicture style={styles.recPicture} />
       <View style={styles.recItemNameStack}>
-        <RecItemName style={styles.recItemName}></RecItemName>
+        <RecItemName style={styles.recItemName} />
         <RecIngredientsText
           style={styles.recIngredientsText}
         ></RecIngredientsText>
       </View>
-      <Ingredients style={styles.ingredients}></Ingredients>
-      <RecCookStepsText style={styles.recCookStepsText}></RecCookStepsText>
-      <CookSteps style={styles.cookSteps}></CookSteps>
+      <Ingredients style={styles.ingredients} />
+      <RecCookStepsText style={styles.recCookStepsText} />
+      <CookSteps style={styles.cookSteps} />
     </View>
   );
 }

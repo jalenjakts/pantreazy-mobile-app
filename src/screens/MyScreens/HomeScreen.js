@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useContext, useEffect } from "react";
+import { StyleSheet, ScrollView, View } from "react-native";
 import MeatsBtn from "../../components/Home/MeatsBtn";
 import VegetableBtn from "../../components/Home/VegetableBtn";
 import FruitBtn from "../../components/Home/FruitBtn";
@@ -9,28 +9,31 @@ import GrainBtn from "../../components/Home/GrainBtn";
 import OilBtn from "../../components/Home/OilBtn";
 import DryGoodBtn from "../../components/Home/DryGoodBtn";
 import HomeHeader from "../../components/Home/HomeHeader";
+import { Context as FoodContext } from "../../context/mainContext";
 
-function HomeScreen(props) {
+const HomeScreen = ({ navigation }) => {
+  const { get_pantry } = useContext(FoodContext);
+
   return (
-    <View style={styles.container}>
-      <HomeHeader style={styles.materialHeader3}></HomeHeader>
+    <ScrollView style={styles.container}>
+      <HomeHeader style={styles.materialHeader3} />
       <View style={styles.row1}>
-        <MeatsBtn style={styles.meat}></MeatsBtn>
-        <VegetableBtn style={styles.veg}></VegetableBtn>
+        <MeatsBtn style={styles.meat} />
+        <VegetableBtn style={styles.veg} />
       </View>
       <View style={styles.row2}>
-        <FruitBtn style={styles.fruit}></FruitBtn>
-        <DairyBtn style={styles.dairy}></DairyBtn>
+        <FruitBtn style={styles.fruit} />
+        <DairyBtn style={styles.dairy} />
       </View>
       <View style={styles.row3}>
-        <SpiceBtn style={styles.spice}></SpiceBtn>
-        <GrainBtn style={styles.grain}></GrainBtn>
+        <SpiceBtn style={styles.spice} />
+        <GrainBtn style={styles.grain} />
       </View>
       <View style={styles.row4}>
-        <OilBtn style={styles.oil}></OilBtn>
-        <DryGoodBtn style={styles.dry}></DryGoodBtn>
+        <OilBtn style={styles.oil} />
+        <DryGoodBtn style={styles.dry} />
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

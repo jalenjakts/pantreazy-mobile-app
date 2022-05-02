@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -9,9 +10,10 @@ import {
 } from "react-native";
 import OilItems from "./OilItems";
 
-function OilBtn(props) {
+const OilBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('PantryFlow', { Screen: 'Oils' })}>
       <View style={styles.imageStack}>
         <ImageBackground
           //source={require("../assets/images/healthy-vegetable-oils-in-glass-bottles-avocado-oil-chickpea-oil-peanut-oil-almond-oil-dark-stock-photograph_csp81982692.jpg")}
@@ -19,12 +21,11 @@ function OilBtn(props) {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <OilItems style={styles.oilItems}></OilItems>
+          <OilItems style={styles.oilItems} />
         </ImageBackground>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to OilsScreen")}
           style={styles.button}
-        ></TouchableOpacity>
+        />
       </View>
       <Text style={styles.oils}>Oils</Text>
     </TouchableOpacity>

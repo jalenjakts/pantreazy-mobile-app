@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -9,9 +10,10 @@ import {
 } from "react-native";
 import DairyItems from "./DairyItems";
 
-function DairyBtn(props) {
+const DairyBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('PantryFlow', { Screen: 'Dairy' })}>
       <View style={styles.imageStack}>
         <ImageBackground
           //source={require("../assets/images/dairy-products-on-wooden-base-and-dark-background-with-copy-space-stock-photography_csp88312303.jpg")}
@@ -19,12 +21,11 @@ function DairyBtn(props) {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <DairyItems style={styles.dairyItems}></DairyItems>
+          <DairyItems style={styles.dairyItems} />
         </ImageBackground>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to DairyScreen")}
           style={styles.button}
-        ></TouchableOpacity>
+        />
       </View>
       <Text style={styles.dairy}>Dairy</Text>
     </TouchableOpacity>

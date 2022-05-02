@@ -6,11 +6,11 @@ import VegHeader from "../../components/Vegetables/VegHeader";
 function VegScreen(props) {
   return (
     <View style={styles.container}>
+      <VegHeader style={styles.materialHeader3}></VegHeader>
       <View style={styles.item1Stack}>
         <Item style={styles.item1}></Item>
         <Text style={styles.loremIpsum}></Text>
       </View>
-      <VegHeader style={styles.materialHeader3}></VegHeader>
     </View>
   );
 }

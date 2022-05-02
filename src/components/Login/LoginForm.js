@@ -57,12 +57,9 @@ const LoginForm = () => {
 
       <TouchableOpacity
         style={[styles.loginButtonContainer, styles.loginButtonContainer2]}
+        onPress={() => login({ email, password })}
       >
         <Text style={styles.login}>Login</Text>
-        <TouchableOpacity
-          style={styles.loginButton}
-          onPress={() => login({email, password})}
-        ></TouchableOpacity>
       </TouchableOpacity>
     </>
   );
@@ -155,7 +152,8 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   login: {
-    color: "#fff",
+    color: "rgba(255,255,255,1)",
+    fontFamily: "roboto-regular",
     fontSize: 20,
   },
   errorMessage: {

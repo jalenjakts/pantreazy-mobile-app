@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -9,9 +10,10 @@ import {
 } from "react-native";
 import GrainItems from "./GrainItems";
 
-function GrainBtn(props) {
+const GrainBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('PantryFlow', { Screen: 'Grains' })}>
       <View style={styles.imageStack}>
         <ImageBackground
           //source={require("../assets/images/different-bread-wheat-on-dark-260nw-310773026.jpg")}
@@ -19,12 +21,11 @@ function GrainBtn(props) {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <GrainItems style={styles.grainItems}></GrainItems>
+          <GrainItems style={styles.grainItems} />
         </ImageBackground>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to GrainsScreen")}
           style={styles.button}
-        ></TouchableOpacity>
+        />
       </View>
       <Text style={styles.grains}>Grains</Text>
     </TouchableOpacity>

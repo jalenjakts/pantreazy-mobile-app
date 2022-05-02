@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
 
-function ProfileHeader(props) {
+const ProfileHeader = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to Go Back")}
+          onPress={() => navigation.goBack()}
           style={styles.leftIconButton}
         >
           <MaterialCommunityIconsIcon
@@ -24,7 +26,7 @@ function ProfileHeader(props) {
       <View style={styles.leftIconButtonRowFiller}></View>
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to HomeScreen")}
+          onPress={() => navigation.navigate('Home')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -33,7 +35,7 @@ function ProfileHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to SearchRecipeScreen")}
+          onPress={() => navigation.navigate('Search')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -42,7 +44,7 @@ function ProfileHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to FavScreen")}
+          onPress={() => navigation.navigate('Favorites')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -51,7 +53,7 @@ function ProfileHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to Scanner")}
+          onPress={() => navigation.navigate('Barcode')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon

@@ -1,13 +1,17 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { Context as AuthContext } from '../../context/authContext';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-function SignOutBtn(props) {
+const SignOutBtn = (props) => {
+  const { state, signout } = useContext(AuthContext);
   return (
-    <View style={[styles.container, props.style]}>
-      <Text style={styles.signOut}>Sign Out</Text>
-      <Icon name="account-location" style={styles.iconStyle}></Icon>
-    </View>
+    <TouchableOpacity onPress={() => signout()}>
+      <View style={[styles.container, props.style]}>
+        <Text style={styles.signOut}>Sign Out</Text>
+        <Icon name="exit-to-app" style={styles.iconStyle}></Icon>
+      </View>
+    </TouchableOpacity>
   );
 }
 

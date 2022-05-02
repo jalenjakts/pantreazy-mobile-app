@@ -3,14 +3,14 @@ import { StyleSheet, View, Text } from "react-native";
 import BarcodeScanner from "../../components/Scanner/BarcodeScanner";
 import ScannerHeader from "../../components/Scanner/ScannerHeader";
 
-function Scanner(props) {
+const Scanner = (props) => {
   return (
     <View style={styles.container}>
       <ScannerHeader
         leftIconButton="Go Back"
         rightIconButton="HomeScreen"
         style={styles.materialHeader1}
-      ></ScannerHeader>
+      />
       <Text style={styles.scanTheBarcode}>Scan the barcode</Text>
       <Text style={styles.loremIpsum}>
         Line up the barcode inside the box and keep the phone steady.

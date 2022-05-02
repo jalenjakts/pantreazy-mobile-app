@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 function ProfileName(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <Text style={styles.testName}>Test Name</Text>
+      <Text style={styles.testName}>{props.profileName}</Text>
     </View>
   );
 }

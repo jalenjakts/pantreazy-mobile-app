@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -9,9 +10,10 @@ import {
 } from "react-native";
 import VegItems from "./VegItems";
 
-function VegetableBtn(props) {
+const VegetableBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('PantryFlow', { Screen: 'Veggies' })}>
       <View style={styles.imageStack}>
         <ImageBackground
           //source={require("../assets/images/360_F_250255913_ESX6n2gO3giI5RWxPQl991X9zgZQeWVj_(2).jpg")}
@@ -19,12 +21,11 @@ function VegetableBtn(props) {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <VegItems style={styles.vegItems}></VegItems>
+          <VegItems style={styles.vegItems} />
         </ImageBackground>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to VegScreen")}
           style={styles.button}
-        ></TouchableOpacity>
+        />
       </View>
       <Text style={styles.vegetables}>Vegetables</Text>
     </TouchableOpacity>

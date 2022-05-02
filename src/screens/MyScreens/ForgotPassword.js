@@ -1,20 +1,20 @@
-import React, { Component } from "react";
+import React, { useState, useContext } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import ResetBtn from "../../components/ForgotPassword/ResetBtn";
 import FpEmail from "../../components/ForgotPassword/FpEmail";
 import Header from "../../components/Header";
+import ForgotForm from "../../components/ForgotPassword/ForgotForm";
 
 function ForgotPassword(props) {
   return (
     <View style={styles.container}>
-      <Header style={styles.header1}></Header>
+      <Header style={styles.header1} />
       <Text style={styles.loremIpsum}>
         Enter the email address you have forgotten the password to below. You
         will be sent an email to verify the address. After verifying you can
         then reset the password.
       </Text>
-      <FpEmail style={styles.materialRightIconTextbox1}></FpEmail>
-      <ResetBtn button="LoginScreen" style={styles.resetBtn}></ResetBtn>
+      <ForgotForm style={styles.resetBtn} />
     </View>
   );
 }
@@ -36,21 +36,21 @@ const styles = StyleSheet.create({
     height: 139,
     width: "90%",
     marginTop: "25%",
-    //marginLeft: "5%"
     alignSelf: "center"
   },
   materialRightIconTextbox1: {
     height: 43,
     width: "80%",
     marginTop: 8,
-    //marginLeft: "5%"
     alignSelf: "center"
   },
   resetBtn: {
     height: 43,
     width: "70%",
-    marginTop: 50,
-    alignSelf: "center"
+    borderRadius: 30,
+    backgroundColor: "rgba(0,159,37,1)",
+    marginTop: 37,
+    marginLeft: "15%",
   },
 });
 

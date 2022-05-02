@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -9,9 +10,11 @@ import {
 } from "react-native";
 import FruitItems from "./FruitItems";
 
-function FruitBtn(props) {
+
+const FruitBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('PantryFlow', { Screen: 'Fruits' })}>
       <View style={styles.imageStack}>
         <ImageBackground
           //source={require("../assets/images/istockphoto-859692130-612x612_(2).jpg")}
@@ -19,12 +22,11 @@ function FruitBtn(props) {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <FruitItems style={styles.fruitItems}></FruitItems>
+          <FruitItems style={styles.fruitItems} />
         </ImageBackground>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to FruitScreen")}
           style={styles.button}
-        ></TouchableOpacity>
+        />
       </View>
       <Text style={styles.fruit}>Fruit</Text>
     </TouchableOpacity>

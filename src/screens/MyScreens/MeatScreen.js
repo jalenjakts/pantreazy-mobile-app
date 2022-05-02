@@ -3,10 +3,10 @@ import { StyleSheet, View, Text } from "react-native";
 import MeatHeader from "../../components/Meats/MeatHeader";
 import Item from "../../components/Item";
 
-function MeatScreen(props) {
+const MeatScreen = (props) => {
   return (
     <View style={styles.container}>
-      <MeatHeader style={styles.materialHeader31}></MeatHeader>
+      <MeatHeader style={styles.materialHeader31} />
       <View style={styles.item1Stack}>
         <Item style={styles.item1}></Item>
         <Text style={styles.loremIpsum}></Text>

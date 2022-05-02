@@ -8,10 +8,12 @@ import {
   Text
 } from "react-native";
 import DryGoodItems from "./DryGoodItems";
+import { useNavigation } from "@react-navigation/native";
 
-function DryGoodBtn(props) {
+const DryGoodBtn = (props) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('DryGoods')}>
       <View style={styles.imageStack}>
         <ImageBackground
           //source={require("../assets/images/istockphoto-1283844624-612x612.jpg")}
@@ -19,12 +21,11 @@ function DryGoodBtn(props) {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <DryGoodItems style={styles.dryGoodItems}></DryGoodItems>
+          <DryGoodItems style={styles.dryGoodItems} />
         </ImageBackground>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to DryGoodsScreen")}
           style={styles.button}
-        ></TouchableOpacity>
+        />
       </View>
       <Text style={styles.dryGoods}>Dry Goods</Text>
     </TouchableOpacity>

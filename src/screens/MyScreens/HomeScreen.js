@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: "4%",
-    height: "0%",
+    //height: "10%",
     width: "28%",
     shadowColor: "rgba(0,0,0,1)",
     shadowOffset: {
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     shadowRadius: 0
   },
 
+<<<<<<< HEAD
 
   row2: {
     height: 147,
@@ -89,6 +90,9 @@ const styles = StyleSheet.create({
     marginTop: 25
   },
 
+=======
+  
+>>>>>>> 241c02914ae0faf44f6a3cd89b6b2fc64a0dc161
 
 });
 

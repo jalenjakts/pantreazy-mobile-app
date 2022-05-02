@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import HelpHeader from "../../components/Help/HelpHeader";
 import Pic from "../../components/Help/Pic";
-//import Header from "../../components/Header";
 
-function ForgotPassword(props) {
+const ForgotPassword = (props) => {
   return (
     <View style={styles.container}>
       <HelpHeader
@@ -12,7 +11,7 @@ function ForgotPassword(props) {
         rightIconButton="HomeScreen"
         style={styles.materialHeader1}
       ></HelpHeader>
-      <Pic style={styles.userPic}></Pic>
+      <Pic style={styles.userPic} />
       <Text style={styles.loremIpsum}>
         This is where we will put some helpful information.
       </Text>

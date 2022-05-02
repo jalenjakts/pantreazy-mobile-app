@@ -1,13 +1,15 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function SearchRecipeHeader(props) {
+  const navigation = useNavigation();
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to ProfileScreen")}
+          onPress={() => navigation.goBack()}
           style={styles.profileBtn}
         >
           <MaterialCommunityIconsIcon
@@ -17,14 +19,14 @@ function SearchRecipeHeader(props) {
         </TouchableOpacity>
         <View style={styles.textWrapper}>
           <Text numberOfLines={1} style={styles.help}>
-            Help
+            Info
           </Text>
         </View>
       </View>
       <View style={styles.leftIconButtonRowFiller}></View>
       <View style={styles.rightIconsWrapper}>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to HomeScreen")}
+          onPress={() => navigation.navigate('Home')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -33,7 +35,7 @@ function SearchRecipeHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to FavScreen")}
+          onPress={() => navigation.navigate('Favorites')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon
@@ -42,7 +44,7 @@ function SearchRecipeHeader(props) {
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log("Navigate to Scanner")}
+          onPress={() => navigation.navigate('Barcode')}
           style={styles.iconButton}
         >
           <MaterialCommunityIconsIcon

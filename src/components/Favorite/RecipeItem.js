@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import RecipePic from "../RecipePic";
 import RecipeTitle from "../RecipeTitle";
 import RecipeInfo from "../RecipeInfo";
+import { useNavigation } from "@react-navigation/native";
 
-function RecipeItem(props) {
+const RecipeItem = (props) => {
+  const navigation = useNavigation();
   return (
-    <View style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('Recipe')}>
       <View style={styles.recipePicStack}>
         <RecipePic style={styles.recipePic}></RecipePic>
         <RecipeTitle style={styles.recipeTitle}></RecipeTitle>
         <RecipeInfo style={styles.recipeInfo}></RecipeInfo>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

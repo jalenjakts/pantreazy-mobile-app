@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import RecLookupPic from "../SearchRecipe/RecLookupPic";
 import RecLookupTitle from "../SearchRecipe/RecLookupTitle";
 import RecLookupInfo from "../SearchRecipe/RecLookupInfo";
+import { useNavigation } from "@react-navigation/native";
 
-function RecSearchItem(props) {
+const RecSearchItem = (props) => {
+  const navigation = useNavigation();
   return (
-    <View style={[styles.container, props.style]}>
-      <RecLookupPic style={styles.recLookupPic}></RecLookupPic>
-      <RecLookupTitle style={styles.recLookupTitle}></RecLookupTitle>
-      <RecLookupInfo style={styles.recLookupInfo}></RecLookupInfo>
-    </View>
+    <TouchableOpacity style={[styles.container, props.style]} onPress={() => navigation.navigate('Recipe')}>
+      <RecLookupPic style={styles.recLookupPic} />
+      <RecLookupTitle style={styles.recLookupTitle} />
+      <RecLookupInfo style={styles.recLookupInfo} />
+    </TouchableOpacity>
   );
 }
 

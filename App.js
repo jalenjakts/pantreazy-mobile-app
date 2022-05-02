@@ -48,12 +48,10 @@ const MainDrawerFlow = () => {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "Barcode") {
             iconName = focused ? "barcode" : "barcode-outline";
-          } else if (route.name === "Search") {
-            iconName = focused ? "search" : "search-outline";
-          } else if (route.name === "Favorites") {
-            iconName = focused ? "heart" : "heart-outline";
           } else if (route.name === "Recipes") {
             iconName = focused ? "fast-food" : "fast-food-outline";
+          } else if (route.name === "Favorites") {
+            iconName = focused ? "heart" : "heart-outline";
           } else if (route.name === "Profile") {
             iconName = focused ? "settings" : "settings-outline";
           } else {
@@ -67,9 +65,8 @@ const MainDrawerFlow = () => {
       })}>
       <MainDrawer.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Barcode" component={Scanner} options={{ headerShown: false }} />
-      <MainDrawer.Screen name="Search" component={SearchRecipeScreen} options={{ headerShown: false }} />
+      <MainDrawer.Screen name="Recipes" component={SearchRecipeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Favorites" component={FavScreen} options={{ headerShown: false }} />
-      <MainDrawer.Screen name="Recipes" component={RecipeScreen} options={{ headerShown: false }} />
       <MainDrawer.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false, }} />
     </MainDrawer.Navigator>
   )
@@ -134,6 +131,11 @@ export default function App() {
             <AppStack.Screen
               name="Help"
               component={HelpScreen}
+              options={{ headerShown: false }}
+            />
+            <AppStack.Screen
+              name="Recipe"
+              component={RecipeScreen}
               options={{ headerShown: false }}
             />
           </AppStack.Navigator>

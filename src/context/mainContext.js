@@ -58,6 +58,8 @@ const get_user = (dispatch) => async () => {
         const response = await pantreazyApi.get("/accounts/getById", { headers: headers }).catch((error) => {
             console.log(error)
         })
+
+        console.log(response)
         dispatch({ type: 'get_user', payload: response.data })
     } catch (err) {
         console.log(err);

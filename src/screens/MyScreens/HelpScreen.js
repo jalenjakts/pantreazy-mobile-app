@@ -12,9 +12,7 @@ function ForgotPassword(props) {
         style={styles.materialHeader1}
       ></HelpHeader>
       <Text style={styles.loremIpsum}>
-        Enter the email address you have forgotten the password to below. You
-        will be sent an email to verify the address. After verifying you can
-        then reset the password.
+        This is where we will put some helpful information.
       </Text>
     </View>
   );

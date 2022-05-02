@@ -13,6 +13,7 @@ import ForgotPassScreen from "./src/screens/MyScreens/ForgotPassScreen";
 import ForgotPassword from "./src/screens/MyScreens/ForgotPassword";   
 import SearchRecipeScreen from "./src/screens/MyScreens/SearchRecipeScreen";
 import ScanDetailScreen from "./src/screens/TestScreens/ScanDetailScreen";
+import Scanner from "./src/screens/MyScreens/Scanner";
 import RecipeScreen from "./src/screens/MyScreens/RecipeScreen";
 import ResolveAuthScreen from "./src/screens/resolveAuthScreen";
 import { Provider as AuthProvider } from "./src/context/authContext";
@@ -43,7 +44,7 @@ const AuthFlow = () => {
     <AuthStack.Navigator>
       <AuthStack.Screen
         name="Signup"
-        component={ScanDetailScreen}
+        component={Scanner}
         options={{ headerShown: false }}
       />
       <AuthStack.Screen

@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 
   itemName: {
     height: 19,
-    width: 108,
+    width: "100%",
     backgroundColor: "#fff",
     marginTop: 0
   }

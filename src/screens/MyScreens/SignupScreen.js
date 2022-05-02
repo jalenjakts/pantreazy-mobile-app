@@ -13,7 +13,7 @@ const SignupScreen = () => {
         <HaveAcntBtn
           button="LoginScreen"
           style={styles.loginBtn}
-        />
+        ></HaveAcntBtn>
       </View>
     </View>
   );
@@ -29,40 +29,16 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: 0
   },
-  materialStackedLabelTextbox: {
-    width: "70%",
-    height: 60,
-    marginTop: "5%",
-    marginLeft: "15%",
-
-  },
-  materialButtonLight: {
-    borderRadius: 30,
-    backgroundColor: "rgba(0,159,37,1)",
-    width: "70%",
-    height: 43,
-    marginTop: "10%",
-    marginLeft: "15%"
-  },
-  textInput: {
-    top: 10,
-    marginLeft: "12%",
-    position: "absolute",
-    fontFamily: "roboto-regular",
-    color: "rgba(97,97,97,1)",
-    width: "100%",
-    height: 17
-  },
   loginText: {
     height: 40,
     width: "70%",
     flexDirection: "row",
-    marginTop: 25,
-    marginLeft: "15%",
+    marginTop: 20,
+    marginLeft: "14%",
     marginRight: 6
   },
   loginBtn: {
-    height: 36,
+    height: 10,
     width: "70%",
     marginLeft: "13%"
   }

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginRight: "5%"
   },
   materialCardBasic: {
-    height: 371,
+    height: "50%",
     width: "90%",
     borderWidth: 1,
     borderColor: "rgba(208,2,27,1)",

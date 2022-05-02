@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 function ItemName(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <Text style={styles.name1}>Name very very long</Text>
+      <Text style={styles.name1}>Name</Text>
     </View>
   );
 }
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#E6E6E6",
     justifyContent: "center",
-    //height: 
+    width: 108
   },
   name1: {
     fontFamily: "roboto-regular",

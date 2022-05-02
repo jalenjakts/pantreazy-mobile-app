@@ -6,12 +6,12 @@ function ScannerHeader(props) {
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.leftIconButtonRow}>
-        <TouchableOpacity /* Conditional navigation not supported at the moment */
-          onPress={() => console.log("Navigate to Go Back")}
+        <TouchableOpacity
+          onPress={() => console.log("Navigate to ProfileScreen")}
           style={styles.leftIconButton}
         >
           <MaterialCommunityIconsIcon
-            name="backspace"
+            name="menu"
             style={styles.leftIcon}
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>

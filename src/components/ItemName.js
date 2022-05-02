@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 const ItemName = (props) => {
   return (
     <View style={[styles.container, props.style]}>
-      <Text style={styles.name1}>Name very very long</Text>
+      <Text style={styles.name1}>Name</Text>
     </View>
   );
 }

@@ -1,21 +1,21 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const HaveAcntBtn = (props) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <View style={[styles.container, props.style]}>
       <Text style={styles.login}>Already have an account?</Text>
       <TouchableOpacity onPress={() => navigation.navigate("Login")} style={styles.button}>
         <Text style={styles.login2}>Login</Text>
       </TouchableOpacity>
-    </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  container1: {
     backgroundColor: "transparent",
     flexDirection: "row",
     minWidth: 88,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   button: {
     top: 0,
     left: 173,
-    width: 151,
+    width: 51,
     position: "absolute",
     bottom: 0,
   },

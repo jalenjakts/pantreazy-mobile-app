@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: "4%",
-    height: "0%",
+    //height: "10%",
     width: "28%",
     shadowColor: "rgba(0,0,0,1)",
     shadowOffset: {
@@ -69,28 +69,6 @@ const styles = StyleSheet.create({
     shadowRadius: 0
   },
 
-
-  row2: {
-    height: 147,
-    flexDirection: "row",
-    marginTop: 25
-  },
-  
-
-
-  row3: {
-    height: 147,
-    flexDirection: "row",
-    marginTop: 25
-  },
- 
-
-
-  row4: {
-    height: 147,
-    flexDirection: "row",
-    marginTop: 25
-  },
   
 
 });

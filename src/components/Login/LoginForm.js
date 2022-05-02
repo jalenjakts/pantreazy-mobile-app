@@ -30,7 +30,7 @@ const LoginForm = () => {
         <Icon name="account-box" style={styles.iconStyle} />
       </View>
 
-      <View style={styles.container}>
+      <TouchableOpacity style={styles.container}>
         <TextInput
           placeholder="Password"
           style={styles.inputStyle}
@@ -39,7 +39,7 @@ const LoginForm = () => {
           onChangeText={setPassword}
         />
         <Icon name="eye" style={styles.iconStyle} />
-      </View>
+      </TouchableOpacity>
 
       <TouchableOpacity
         style={[styles.forgotPassContainer, styles.forgotPassContainer2]}

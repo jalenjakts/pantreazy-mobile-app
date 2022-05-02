@@ -46,7 +46,7 @@ const AuthFlow = () => {
     <AuthStack.Navigator>
       <AuthStack.Screen
         name="Signup"
-        component={RecipeScreen}
+        component={SignupScreen}
         options={{ headerShown: false }}
       />
       <AuthStack.Screen
